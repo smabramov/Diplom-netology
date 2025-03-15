@@ -1,0 +1,38 @@
+---
+- name: Ensure Python3 is installed
+  apt:
+    name: python3
+    state: present
+    update_cache: yes
+  when: ansible_os_family == "Debian"
+
+- name: Install dependencies for Ansible (Debian)
+  apt:
+    name:
+      - python3-pip
+      - python3-dev
+      - libffi-dev
+      - gcc
+      - libssl-dev
+    state: present
+    update_cache: yes
+  when: ansible_os_family == "Debian"
+
+- name: Upgrade pip
+  pip:
+    name: pip
+    state: latest
+    executable: pip3
+
+- name: Install Ansible via pip
+  pip:
+    name: ansible
+    state: present
+    executable: pip3
+
+- name: Verify Ansible installation
+  command: ansible --version
+  register: ansible_version
+  changed_when: false
+
+

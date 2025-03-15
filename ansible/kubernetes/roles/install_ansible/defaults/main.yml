@@ -1,0 +1,3 @@
+---
+# Указываем версию Ansible, если требуется
+ansible_version: "latest"

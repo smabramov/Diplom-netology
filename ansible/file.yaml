@@ -1,0 +1,17 @@
+- name: Copy files to remote server
+  hosts: k8s-master
+  become: yes
+  tasks:
+    - name: Ensure target directory exists
+      file:
+        path: /home/ubuntu/files
+        state: directory
+        mode: '0755'
+
+    - name: Copy files to remote server
+      copy:
+        src: /home/serg/diplom/Diplom-netology/k8s
+        dest: /home/ubuntu/files
+        owner: ubuntu
+        group: ubuntu
+        mode: '0644'

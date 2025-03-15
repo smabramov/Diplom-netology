@@ -1,0 +1,1 @@
+kubeadm join 10.10.1.32:6443 --token bhhvo9.hsy54bxu9o1gpsiv --discovery-token-ca-cert-hash sha256:413dc16e2e23ec09f8ef53edc5db0c0007f295c2f572ab74fba132bf80d16432 

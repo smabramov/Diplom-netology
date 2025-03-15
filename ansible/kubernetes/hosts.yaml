@@ -1,0 +1,32 @@
+all:
+    hosts:
+        k8s-master:
+            ansible_host:
+            ip: 10.10.1.25
+            ansible_user: ubuntu
+            ansible_ssh_common_args: -J ubuntu@158.160.49.186
+
+        k8s-worker-1:
+            ansible_host:
+            ip: 10.10.1.32
+            ansible_user: ubuntu
+            ansible_ssh_common_args: -J ubuntu@158.160.49.186
+        
+        k8s-worker-2:
+            ansible_host:
+            ip: 10.10.2.27
+            ansible_user: ubuntu
+            ansible_ssh_common_args: -J ubuntu@158.160.49.186
+         
+        
+        
+kube_control_plane:
+    hosts: 
+        k8s-master:
+kube_node:
+    hosts:
+        k8s-worker-1:
+        k8s-worker-2:
+etcd:
+    hosts: 
+        k8s-master:

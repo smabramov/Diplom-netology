@@ -1,0 +1,52 @@
+- name: Install monitoring stack
+  hosts: localhost
+  become: false
+  gather_facts: false
+
+  tasks:
+
+    - name: Clone kube-prometheus
+      ansible.builtin.git:
+        repo: https://github.com/prometheus-operator/kube-prometheus.git
+        dest: kube-prometheus
+
+    - name: Create the namespace and CRDs
+      ansible.builtin.command:
+        cmd: 'kubectl apply --server-side -f manifests/setup'
+        chdir: 'kube-prometheus/'
+
+    - name: Wait for CRDs to be established
+      ansible.builtin.command:
+        cmd: 'kubectl wait --for condition=Established --all CustomResourceDefinition --namespace=monitoring'
+        chdir: 'kube-prometheus/'
+
+    - name: Create namespace my-app
+      ansible.builtin.command:
+        cmd: 'kubectl create ns my-app'
+        chdir: 'kube-prometheus/'
+
+    - name: Deploy kube-prometheus
+      ansible.builtin.command:
+        cmd: 'kubectl apply -f manifests/'
+        chdir: 'kube-prometheus/'
+
+    - name: Set permissions for grafana-service.yml
+      ansible.builtin.command:
+        cmd: 'chmod 0644 grafana-service.yml'
+
+    - name: Apply my-app resources
+      ansible.builtin.command:
+        cmd: "kubectl apply -f {{ item }} -n my-app"
+      with_items:
+        - "app-deployment.yml"
+        - "app-networkpolicy.yml"
+        - "app-service.yml"
+
+    - name: Apply grafana resources
+      ansible.builtin.command:
+        cmd: "kubectl apply -f {{ item }} -n monitoring"
+      with_items:
+        - "grafana-service.yml"
+        - "grafana-networkpolicy.yml" 
+      
+         
