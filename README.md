@@ -233,9 +233,9 @@ local_file.backend: Creation complete after 0s [id=b0d6139aabb3b4733f00c7cfe6d4b
 
 Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
 ```
-![sa]()
+![sa](https://github.com/smabramov/Diplom-netology/blob/fab352ab4a94d916c5399123e5a3446f1d698241/png/sa.png)
 
-![bucket]()
+![bucket](https://github.com/smabramov/Diplom-netology/blob/fab352ab4a94d916c5399123e5a3446f1d698241/png/bucket.png)
 
 Установил утилиту yc - порядок установки описан в этой статье [yandex-cloud](https://yandex.cloud/ru/docs/cli/quickstart)
 
@@ -479,9 +479,9 @@ yandex_vpc_network.k8s: Destruction complete after 1s
 
 Destroy complete! Resources: 4 destroyed.
 ```
-![state]()
+![state](https://github.com/smabramov/Diplom-netology/blob/fab352ab4a94d916c5399123e5a3446f1d698241/png/state.png)
 
-![VPC]()
+![VPC](https://github.com/smabramov/Diplom-netology/blob/fab352ab4a94d916c5399123e5a3446f1d698241/png/VPC.png)
 
 
 ### Создание Kubernetes кластера
@@ -575,7 +575,7 @@ all_vms = {
 }
 ```
 
-![vm]()
+![vm](https://github.com/smabramov/Diplom-netology/blob/fab352ab4a94d916c5399123e5a3446f1d698241/png/vm.png)
 
 Также автоматически создался файл /ansible/host.yaml:
 
@@ -953,9 +953,9 @@ web = [
 ```
 Добавлю в hosts фаил записи (ip-web  app-web.ru  и ip-monitoring  monitoring.ru), проверяю доступность на 80 порту:
 
-!(web)[]
+!(web)[https://github.com/smabramov/Diplom-netology/blob/fab352ab4a94d916c5399123e5a3446f1d698241/png/web.png]
 
-!(grafana)[]
+!(grafana)[https://github.com/smabramov/Diplom-netology/blob/fab352ab4a94d916c5399123e5a3446f1d698241/png/grafana.png]
 
 
  ### Установка и настройка CI/CD
@@ -981,7 +981,7 @@ web = [
 
  Добавим в Github Actions секреты для работы с DockerHub.
 
- ![secret]()
+ ![secret](https://github.com/smabramov/Diplom-netology/blob/fab352ab4a94d916c5399123e5a3446f1d698241/png/secret.png)
 
  Для соединения с Githud Actions подключусь с мастер ноды при помощи runner:
 
@@ -1029,15 +1029,15 @@ ubuntu@k8s-master:~/actions-runner$ ./run.sh
 Current runner version: '2.322.0'
 2025-03-15 16:27:22Z: Listening for Jobs
 ```
-Использую [workflow]()
+Использую [workflow](https://github.com/smabramov/Diplom-netology/blob/fab352ab4a94d916c5399123e5a3446f1d698241/git%20action/workflow)
 
 При изменении в репозитории будет пушется новый tag на Dockerhub и на кластере пересоздоваться мой deployment.
 
-![docker]()
+![docker](https://github.com/smabramov/Diplom-netology/blob/fab352ab4a94d916c5399123e5a3446f1d698241/png/docker.png)
 
-![git]()
+![git](https://github.com/smabramov/Diplom-netology/blob/fab352ab4a94d916c5399123e5a3446f1d698241/png/git.png)
 
-![web1]()
+![web1](https://github.com/smabramov/Diplom-netology/blob/fab352ab4a94d916c5399123e5a3446f1d698241/png/web1.png)
 
 
 
