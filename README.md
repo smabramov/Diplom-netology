@@ -953,9 +953,9 @@ web = [
 ```
 Добавлю в hosts фаил записи (ip-web  app-web.ru  и ip-monitoring  monitoring.ru), проверяю доступность на 80 порту:
 
-!(web)[https://github.com/smabramov/Diplom-netology/blob/fab352ab4a94d916c5399123e5a3446f1d698241/png/web.png]
+![web](https://github.com/smabramov/Diplom-netology/blob/fab352ab4a94d916c5399123e5a3446f1d698241/png/web.png)
 
-!(grafana)[https://github.com/smabramov/Diplom-netology/blob/fab352ab4a94d916c5399123e5a3446f1d698241/png/grafana.png]
+![grafana](https://github.com/smabramov/Diplom-netology/blob/fab352ab4a94d916c5399123e5a3446f1d698241/png/grafana.png)
 
 
  ### Установка и настройка CI/CD
